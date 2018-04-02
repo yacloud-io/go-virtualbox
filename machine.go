@@ -373,6 +373,8 @@ func (m *Machine) Modify() error {
 		"--vtxvpid", m.Flag.Get(F_vtxvpid),
 		"--vtxux", m.Flag.Get(F_vtxux),
 		"--accelerate3d", m.Flag.Get(F_accelerate3d),
+		"--uart1 0x3F8 4",
+		fmt.Sprintf("--uartmode1 file %s/console.log", m.BaseFolder),
 	}
 
 	for i, dev := range m.BootOrder {
